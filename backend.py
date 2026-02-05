@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#TODO: PLEASE organize this bro
 from flask import Flask, render_template, request, jsonify, send_from_directory, abort, Response, redirect, make_response, url_for
 from flask_cors import CORS
 import json
@@ -21,6 +22,7 @@ import pystray
 from PIL import Image
 import logging
 from logging.handlers import RotatingFileHandler
+import webbrowser
 
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -76,7 +78,9 @@ def tray():
         menu=pystray.Menu(
             pystray.MenuItem("Show Logs", open_logs),
             pystray.MenuItem("Reload Now", lambda: action_queue.append("reload")),
-            pystray.MenuItem("Quit", lambda: os._exit(0))
+            pystray.MenuItem("Open GUI", lambda: webbrowser.open_new_tab("http://localhost:8617/gui")),
+            pystray.MenuItem("Quit", lambda: os._exit(0)),
+            
         )
     )
     icon.run()

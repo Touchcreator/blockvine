@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-import os
-import sys
-import zipfile
-import shutil
 import json
+import os
+import shutil
+import sys
 import time
+import zipfile
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -63,8 +63,8 @@ def organize_sb3(sb3_path):
 
         elif ext in [".wav", ".mp3", ".ogg"]:
             try:
-                import wave
                 import contextlib
+                import wave
                 if ext == ".wav":
                     with contextlib.closing(wave.open(str(file), 'r')) as f:
                         duration = f.getnframes() / float(f.getframerate())

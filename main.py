@@ -14,6 +14,7 @@ import tempfile
 import threading
 import time
 import tkinter as tk
+import webbrowser
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from tkinter import messagebox

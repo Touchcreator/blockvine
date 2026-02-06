@@ -1,29 +1,30 @@
 #!/usr/bin/env python3
 
 #TODO: PLEASE organize this bro
-from flask import Flask, render_template, request, jsonify, send_from_directory, abort, Response, redirect, make_response, url_for
-from flask_cors import CORS
-import json
-import os
-import sys
-import subprocess
 import asyncio
+import base64
+import hashlib
+import json
+import logging
+import os
 import platform
+import shutil
+import subprocess
+import sys
+import tempfile
 import threading
 import time
-import hashlib
-from pathlib import Path
-import base64
-import shutil
-import tempfile
 import tkinter as tk
-from tkinter import messagebox
-import pystray
-from PIL import Image
-import logging
-from logging.handlers import RotatingFileHandler
 import webbrowser
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+from tkinter import messagebox
 
+import pystray
+from flask import (Flask, Response, abort, jsonify, make_response, redirect,
+                   render_template, request, send_from_directory, url_for)
+from flask_cors import CORS
+from PIL import Image
 
 sys.stdout.reconfigure(encoding="utf-8")
 

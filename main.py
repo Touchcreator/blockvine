@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-import asyncio
+import psutil  # supports linux, windows, macos, freebsd, openbsd, netbsd, sun solaris, and aix. sorry if you dont use those!
 import base64
 import hashlib
 import json
@@ -13,13 +12,10 @@ import sys
 import tempfile
 import threading
 import time
-import tkinter as tk
-import webbrowser
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from tkinter import messagebox
 
-import psutil  # supports linux, windows, macos, freebsd, openbsd, netbsd, sun solaris, and aix. sorry if you dont use those!
+
 import pystray
 from flask import (Flask, Response, abort, jsonify, make_response, redirect,
                    render_template, request, send_from_directory, url_for)
@@ -59,8 +55,8 @@ class StdoutLogger:
     def flush(self):
         pass
 
-sys.stdout = StdoutLogger()
-sys.stderr = StdoutLogger()
+#sys.stdout = StdoutLogger()
+#sys.stderr = StdoutLogger()
 
 
 app = Flask(__name__, template_folder="gui", static_folder=None)

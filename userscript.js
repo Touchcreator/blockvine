@@ -1,10 +1,9 @@
-(function(){
+(function() {
     'use strict';
 
     /* -----------------------------
        Reload watcher
     ------------------------------*/
-    console.log("blocklive opening")
 
     function base64ToUint8Array(base64) {
         console.log("converting to uint8array");

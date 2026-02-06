@@ -8,24 +8,24 @@ def settings() -> dict:
     toml_data = {}
 
     try:
-        with open("blocklive.toml", "rb") as f:
+        with open("blockvine.toml", "rb") as f:
             toml_data = tomllib.load(f)
         print("Settings file loaded successfully!")
     except FileNotFoundError:
         print("No settings file. Creating settings file.")
-        file = open("blocklive.toml", "w")
+        file = open("blockvine.toml", "w")
         file.write(default_toml)
         file.close()
 
-        with open("blocklive.toml", "rb") as f:
+        with open("blockvine.toml", "rb") as f:
             toml_data = tomllib.load(f)
     except tomllib.TOMLDecodeError:
         print("Settings file malformed. Recreating settings file.")
-        file = open("blocklive.toml", "w")
+        file = open("blockvine.toml", "w")
         file.write(default_toml)
         file.close()
 
-        with open("blocklive.toml", "rb") as f:
+        with open("blockvine.toml", "rb") as f:
             toml_data = tomllib.load(f)
 
 
